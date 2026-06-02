@@ -28,11 +28,11 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		links.push(LinkPreset.Guestbook);
 	}
 
-
-	// ✅ 公益项目 - 使用 LinkPreset.Welfare
+	// ✅ 公益项目 - 直接定义，不使用 LinkPresets
 	links.push({
-		...LinkPresets[LinkPreset.Welfare],  // 展开基础配置
-		children: [  // 添加子菜单
+		name: "公益项目",
+		icon: "material-symbols:favorite",
+		children: [
 			{
 				name: "乡村教育支持",
 				url: "/welfare/rural-education/",
