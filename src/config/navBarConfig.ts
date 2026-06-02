@@ -32,7 +32,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	// ✅ 公益项目 - 直接添加，不依赖配置
 	links.push({
 		name: "公益项目",
-		url: "/welfare/",
+		// url: "/welfare/",  // ❌ 注释掉或删除这一行
 		icon: "material-symbols:favorite",  // 改用存在的图标
 		children: [
 			{
