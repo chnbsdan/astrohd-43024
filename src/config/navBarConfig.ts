@@ -29,13 +29,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	}
 
 
-	// ✅ 公益项目（带子链接）
+	// ✅ 公益项目 - 直接添加，不依赖配置
 	links.push({
 		name: "公益项目",
 		url: "/welfare/",
-		icon: "material-symbols:favorite-hand",
+		icon: "material-symbols:favorite",  // 改用存在的图标
 		children: [
-			// 内部文章链接
 			{
 				name: "乡村教育支持",
 				url: "/welfare/rural-education/",
@@ -51,18 +50,11 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				url: "/welfare/animal-rescue/",
 				icon: "material-symbols:pets",
 			},
-			// 外部链接
 			{
 				name: "捐赠渠道",
 				url: "https://donate.example.com",
 				external: true,
 				icon: "material-symbols:volunteer-activism",
-			},
-			{
-				name: "官方公益平台",
-				url: "https://charity.example.com",
-				external: true,
-				icon: "material-symbols:verified",
 			},
 		],
 	});
