@@ -37,22 +37,22 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		children: [
 			{
 				name: "乡村教育支持",
-				url: "/welfare/rural-education/",
+				url: "/welfare/",
 				icon: "material-symbols:school",
 			},
 			{
 				name: "环境保护计划",
-				url: "/welfare/environment/",
+				url: "/welfare/",
 				icon: "material-symbols:forest",
 			},
 			{
 				name: "动物救助行动",
-				url: "/welfare/animal-rescue/",
+				url: "/welfare/",
 				icon: "material-symbols:pets",
 			},
 			{
 				name: "捐赠渠道",
-				url: "https://donate.example.com",
+				url: "https://hangdn.com",
 				external: true,
 				icon: "material-symbols:volunteer-activism",
 			},
