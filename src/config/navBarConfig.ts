@@ -28,6 +28,45 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		links.push(LinkPreset.Guestbook);
 	}
 
+
+	// ✅ 公益项目（带子链接）
+	links.push({
+		name: "公益项目",
+		url: "/welfare/",
+		icon: "material-symbols:favorite-hand",
+		children: [
+			// 内部文章链接
+			{
+				name: "乡村教育支持",
+				url: "/welfare/rural-education/",
+				icon: "material-symbols:school",
+			},
+			{
+				name: "环境保护计划",
+				url: "/welfare/environment/",
+				icon: "material-symbols:forest",
+			},
+			{
+				name: "动物救助行动",
+				url: "/welfare/animal-rescue/",
+				icon: "material-symbols:pets",
+			},
+			// 外部链接
+			{
+				name: "捐赠渠道",
+				url: "https://donate.example.com",
+				external: true,
+				icon: "material-symbols:volunteer-activism",
+			},
+			{
+				name: "官方公益平台",
+				url: "https://charity.example.com",
+				external: true,
+				icon: "material-symbols:verified",
+			},
+		],
+	});
+	
 	// 我的及其子菜单
 	links.push({
 		name: "我的",
