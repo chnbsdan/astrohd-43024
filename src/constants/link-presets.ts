@@ -43,4 +43,10 @@ export const LinkPresets: { [key in LinkPreset]: NavBarLink } = {
 		url: "/gallery/",
 		icon: "material-symbols:photo-library",
 	},
+	// ✅ 添加 Welfare 映射
+	[LinkPreset.Welfare]: {
+		name: "公益项目",  // 或者使用 i18n: i18n(I18nKey.welfare)
+		url: "/welfare/",
+		icon: "material-symbols:favorite",
+	},
 };
