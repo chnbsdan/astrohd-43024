@@ -178,6 +178,7 @@ export enum LinkPreset {
 	Guestbook = 5,
 	Bangumi = 6,
 	Gallery = 7,
+	Welfare = 8,  // ✅ 添加公益项目（Welfare 或 PublicWelfare）
 }
 
 export type NavBarLink = {
