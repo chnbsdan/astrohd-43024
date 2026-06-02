@@ -29,12 +29,10 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	}
 
 
-	// ✅ 公益项目 - 直接添加，不依赖配置
+	// ✅ 公益项目 - 使用 LinkPreset.Welfare
 	links.push({
-		name: "公益项目",
-		// url: "/welfare/",  // ❌ 注释掉或删除这一行
-		icon: "material-symbols:favorite",  // 改用存在的图标
-		children: [
+		...LinkPresets[LinkPreset.Welfare],  // 展开基础配置
+		children: [  // 添加子菜单
 			{
 				name: "乡村教育支持",
 				url: "/welfare/rural-education/",
