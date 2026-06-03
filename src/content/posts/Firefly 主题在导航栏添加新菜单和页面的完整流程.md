@@ -6,7 +6,7 @@ tags: ["公益", "教程"]
 ---
 
 ## 📁 需要修改/创建的 4 个文件
-
+```
 项目根目录/
 ├── src/
 │   ├── config/
@@ -23,6 +23,8 @@ tags: ["公益", "教程"]
 │           ├── rural-education.astro
 │           ├── environment.astro
 │           └── animal-rescue.astro
+
+```
 
 ## 1️⃣ 导航栏配置 (src/config/navBarConfig.ts)
 
@@ -144,13 +146,15 @@ const { Content } = await render(post);
 - slug 对应 .md 文件名（不含扩展名）
 
 ## 🎯 核心要点
-| |  |  |
+
+|  |  |  |
 | :----- | :----- | :------ |
 |文件类型|	位置	|作用|
 |.astro 路由|	src/pages/welfare/	|布局、获取内容、渲染页面|
 |.md 内容|	src/content/welfare/	|实际的文章/页面内容|
 |config.ts|	src/content/	|注册内容集合，定义数据结构|
 |navBarConfig.ts|	src/config/	|配置导航栏菜单项|
+| |  |  |
 
 ## 🔄 完整工作流程
 
