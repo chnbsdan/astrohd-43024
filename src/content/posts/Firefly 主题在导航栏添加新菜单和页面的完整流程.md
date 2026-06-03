@@ -142,7 +142,7 @@ const { Content } = await render(post);
 ### 关键点：
 
 - getEntry("集合名", "slug")
-- 集合名必须与 content/config.ts 中注册的一致
+- 集合名必须与 src/content.config.ts 中注册的一致
 - slug 对应 .md 文件名（不含扩展名）
 
 ## 🎯 核心要点
@@ -150,9 +150,9 @@ const { Content } = await render(post);
 |  |  |  |
 | :----- | :----- | :------ |
 |文件类型|	位置	|作用|
-|.astro 路由|	src/pages/welfare/	|布局、获取内容、渲染页面|
+|.astro 路由|	src/pages/	|布局、获取内容、渲染页面|
 |.md 内容|	src/content/welfare/	|实际的文章/页面内容|
-|config.ts|	src/content/	|注册内容集合，定义数据结构|
+|content.config.ts |	src/content/	|注册内容集合，定义数据结构|
 |navBarConfig.ts|	src/config/	|配置导航栏菜单项|
 | |  |  |
 
