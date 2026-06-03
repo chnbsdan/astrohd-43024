@@ -1,7 +1,9 @@
 ---
 import { getEntry, render } from "astro:content";
 import Markdown from "@components/common/Markdown.astro";
+import Comment from "@components/comment/index.astro";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { commentConfig } from "@/config";
 
 const post = await getEntry("welfare", "environment");
 
@@ -9,7 +11,9 @@ if (!post) {
     throw new Error("Welfare page not found");
 }
 
-const { Content } = await render(post); 
+const { Content } = await render(post);
+
+const isCommentEnabled = commentConfig?.type && commentConfig.type !== "none";
 ---
 
 <MainGridLayout title={post.data.title} description={post.data.description}>
@@ -20,4 +24,13 @@ const { Content } = await render(post);
             </Markdown>
         </div>
     </div>
+
+<!-- 评论区 -->
+    {isCommentEnabled && (
+        <div class="mt-4 w-full rounded-(--radius-large) overflow-hidden relative">
+            <div class="card-base z-10 px-9 py-6 relative w-full">
+                <Comment post={null} customPath="/welfare/environment/" />
+            </div>
+        </div>
+    )}
 </MainGridLayout>
