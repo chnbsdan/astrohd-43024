@@ -36,7 +36,19 @@ const specCollection = defineCollection({
 	schema: z.object({}),
 });
 
+// ✅ 添加 welfare 集合
+const welfareCollection = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/welfare" }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string().optional(),
+		published: z.date().optional(),
+		tags: z.array(z.string()).optional(),
+	}),
+});
+
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
+	welfare: welfareCollection,  // ✅ 添加这一行
 };
