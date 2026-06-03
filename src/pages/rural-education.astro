@@ -1,10 +1,23 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import { getEntry, render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+const post = await getEntry("welfare", "rural-education");
+
+if (!post) {
+    throw new Error("Welfare page not found");
+}
+
+const { Content } = await render(post);
 ---
 
-<Layout title="乡村教育支持">
-    <main class="container mx-auto px-4 py-8 max-w-4xl">
-        <h1 class="text-3xl font-bold mb-4">乡村教育支持</h1>
-        <p>为偏远山区儿童提供教育资源，点亮希望之光。</p>
-    </main>
-</Layout>
+<MainGridLayout title={post.data.title} description={post.data.description}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+        </div>
+    </div>
+</MainGridLayout>
